@@ -1,4 +1,4 @@
-﻿var enemySpeed: int;
+﻿private var enemySpeed: int;
 var jumpSpeed: float;
 var	jumpVelocity: float;
 var amtToMove: float; //variable to edit the speed of the moving object 
@@ -10,6 +10,8 @@ var secondMove: boolean;
 
 function Start()
 {
+	enemySpeed = 10;
+	
 	state = Random.Range(1, 4);
 	//state = 3;
 
