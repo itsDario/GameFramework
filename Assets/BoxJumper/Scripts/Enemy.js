@@ -10,7 +10,7 @@ var secondMove: boolean;
 
 function Start()
 {
-	enemySpeed = 10;
+	enemySpeed = 13;
 	
 	state = Random.Range(1, 4);
 	//state = 3;
@@ -28,7 +28,7 @@ function Update ()
 	if(firstMove || secondMove){
 	transform.Translate(Vector3(-1, 0, 0) * amtToMove);
 	}
-	if(transform.position.x < -8 )
+	if(transform.position.x < -10 )
 	{
 		switch(state)
 		{
@@ -43,22 +43,14 @@ function Update ()
 				pause();
 				break;
 		}
-		
 	}
 	
-	Physics.gravity = Vector3(0, -80.0, 0);
-	
+	Physics.gravity = Vector3(0, -80.0, 0);	
 }
 
-
-
-function jump()
-{
-
-	if(eJump)
-	{
-		 rigidbody.velocity.y = 20.0;
-		 
+function jump(){
+	if(eJump){
+		 rigidbody.velocity.y = 20.0; 
 		 eJump = false;
 		
 	}
@@ -69,4 +61,3 @@ function pause(){
 	yield WaitForSeconds(1);
 	secondMove = true;
 }
-
