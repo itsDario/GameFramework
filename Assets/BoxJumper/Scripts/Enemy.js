@@ -10,6 +10,15 @@ var secondMove: boolean;
 
 function Start()
 {
+	//Set Speed veriables here
+	if(StartScreen.Speed == "Low"){
+	
+	}else if (StartScreen.Speed == "Mid"){
+	
+	}else if (StartScreen.Speed == "High"){
+	
+	}
+
 	enemySpeed = 13;
 	
 	state = Random.Range(1, 4);
@@ -17,7 +26,7 @@ function Start()
 
 	eJump = true;
 	
-	 firstMove = true;
+	firstMove = true;
     secondMove = false;
 }
 
