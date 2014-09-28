@@ -2,9 +2,9 @@
 var jumpSpeed: float;
 var	jumpVelocity: float;
 var amtToMove: float; //variable to edit the speed of the moving object 
-var eJump: boolean; 
+var enemyJump: boolean; 
 var state: int; 
-var firstMove: boolean;
+var move: boolean;
 var secondMove: boolean;
 
 
@@ -24,18 +24,18 @@ function Start()
 	state = Random.Range(1, 4);
 	//state = 3;
 
-	eJump = true;
+	enemyJump = true;
 	
-	firstMove = true;
-    secondMove = false;
+	move = true;
 }
 
 function Update () 
 {
 	amtToMove = enemySpeed * Time.deltaTime;
 	
-	if(firstMove || secondMove){
-	transform.Translate(Vector3(-1, 0, 0) * amtToMove);
+	if(move){
+		transform.Translate(Vector3(-1, 0, 0) * amtToMove);
+		//rigidbody.velocity.x = -1 * amtToMove;
 	}
 	if(transform.position.x < -10 )
 	{
@@ -58,15 +58,14 @@ function Update ()
 }
 
 function jump(){
-	if(eJump){
-		 rigidbody.velocity.y = 20.0; 
-		 eJump = false;
-		
+	if(enemyJump){
+		 rigidbody.velocity.y = 20.0;
+		 enemyJump = false;
 	}
 
 }
 function pause(){
-	firstMove = false;
+	move = false;
 	yield WaitForSeconds(1);
-	secondMove = true;
+	move = true;
 }

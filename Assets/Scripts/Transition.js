@@ -14,7 +14,7 @@ function Update () {
 		guiText.text = "Lose. Health: " + StartScreen.Health + " Score: " + StartScreen.Score;
 	}
 	
-	Debug.Log(StartScreen.Speed);
+	//Debug.Log(StartScreen.Speed);
 }
 
 function LevelSwitch(){

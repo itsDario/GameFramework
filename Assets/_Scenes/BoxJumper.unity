@@ -159,9 +159,9 @@ MonoBehaviour:
   jumpSpeed: 20
   jumpVelocity: 10
   amtToMove: 10
-  eJump: 0
+  enemyJump: 0
   state: 0
-  firstMove: 0
+  move: 0
   secondMove: 0
 --- !u!54 &21742421
 Rigidbody:
